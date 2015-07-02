@@ -1,7 +1,7 @@
 <?php
 
 // Check so WP_CLI exists or return.
-if ( ! defined( 'WP_CLI' ) ) {
+if ( ! defined( 'WP_CLI' ) || class_exists( 'Lint_Command' ) ) {
 	return;
 }
 
