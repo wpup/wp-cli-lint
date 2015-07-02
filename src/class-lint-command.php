@@ -176,4 +176,4 @@ class Lint_Command extends WP_CLI_Command {
 
 }
 
-\WP_CLI::add_command( 'lint', 'Lint_Command' );
+WP_CLI::add_command( 'lint', 'Lint_Command' );
