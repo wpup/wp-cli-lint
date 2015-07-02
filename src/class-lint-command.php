@@ -55,15 +55,11 @@ class Lint_Command extends WP_CLI_Command {
 		}
 
 		$paths = [
-			'',
+			getcwd(),
 			rtrim( preg_replace( '/\/web\/wp$/', '', $root_path ), '/' ),
 			$root_path,
 			rtrim( $_SERVER['HOME'], '/' ) . '/.wp-cli',
 		];
-
-		if ( ! in_array( getcwd(), $paths ) ) {
-			$paths[0] = getcwd();
-		}
 
 		$files = [
 			'.phpcs.ruleset.xml',
@@ -104,14 +100,10 @@ class Lint_Command extends WP_CLI_Command {
 		}
 
 		$paths = [
-			'',
+			getcwd(),
 			preg_replace( '/\/web\/wp$/', '', $root_path ),
 			$root_path,
 		];
-
-		if ( ! in_array( getcwd(), $paths ) ) {
-			$paths[0] = getcwd();
-		}
 
 		$file      = '/vendor/bin/phpcs';
 		$phpcs_bin = 'phpcs';
