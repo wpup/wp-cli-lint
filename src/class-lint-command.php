@@ -55,13 +55,14 @@ class Lint_Command extends WP_CLI_Command {
 		}
 
 		$paths = [
-			$root_path,
+			'',
 			rtrim( preg_replace( '/\/web\/wp$/', '', $root_path ), '/' ),
+			$root_path,
 			rtrim( $_SERVER['HOME'], '/' ) . '/.wp-cli',
 		];
 
 		if ( ! in_array( getcwd(), $paths ) ) {
-			$paths[] = getcwd();
+			$paths[0] = getcwd();
 		}
 
 		$files = [
@@ -103,12 +104,13 @@ class Lint_Command extends WP_CLI_Command {
 		}
 
 		$paths = [
+			'',
+			preg_replace( '/\/web\/wp$/', '', $root_path ),
 			$root_path,
-			preg_replace( '/\/web\/wp$/', '', $root_path )
 		];
 
 		if ( ! in_array( getcwd(), $paths ) ) {
-			$paths[] = getcwd();
+			$paths[0] = getcwd();
 		}
 
 		$file      = '/vendor/bin/phpcs';
@@ -183,4 +185,3 @@ class Lint_Command extends WP_CLI_Command {
 }
 
 \WP_CLI::add_command( 'lint', 'Lint_Command' );
-
