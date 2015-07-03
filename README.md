@@ -42,7 +42,7 @@ lint:
 ### Options
 
 #### `[<directory>]`
-The directory to lint code in. **Default: '__DIR__'**
+The directory to lint code in. **Default: 'Current directory'**
 
 #### `[--standard=<standard>]`
 The standard to use when running `phpcs`. **Default: 'WordPress-Core'**
