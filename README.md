@@ -18,7 +18,7 @@ For other methods, please refer to WP-CLI's [Community Packages](https://github.
 
 ## Usage
 
-Running the command without any options will lint your code in the current directory with `WordPress-Core` standard.
+Running the command without any options will lint your code in the current directory with `WordPress-Core` standard. The lint command will try to find a ruleset in the same directory you are linting or in the `ABSPATH` or in Bedrocks base directory.
 
 Example:
 

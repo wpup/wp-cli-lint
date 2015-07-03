@@ -162,7 +162,7 @@ class Lint_Command extends WP_CLI_Command {
 
 	public function __invoke( array $args = [], array $options = [] ) {
 		if ( empty( $args ) ) {
-			$args[] = __DIR__;
+			$args[] = getcwd();
 		}
 
 		if ( ! file_exists( $args[0] ) ) {
