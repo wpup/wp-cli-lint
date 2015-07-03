@@ -131,9 +131,29 @@ class Lint_Command extends WP_CLI_Command {
 	/**
 	 * Invoke the lint command.
 	 *
-	 * Example:
+	 * ### Config
+	 * You can add the path to the `phpcs` bin to use in WP CLI's config file and/or the standard that should be used.
 	 *
-	 *		$ wp lint path/to/directory
+	 * Example of `~/.wp-cli/config.yml`:
+	 *
+	 *     lint:
+	 *       phpcs: /path/to/phpcs
+	 *       standard: `WordPress-Extra`
+	 *
+	 *
+	 * ### Options
+	 *
+	 * #### `[<directory>]`
+	 * The directory to lint code in. **Default: '__DIR__'**
+	 *
+	 * #### `[--standard=<standard>]`
+	 * The standard to use when running `phpcs`. **Default: 'WordPress-Core'**
+	 *
+	 * ### Examples
+	 *
+	 *     wp lint
+	 *     wp lint path/to/directory --standard=WordPress-Extra
+	 *
 	 *
 	 * @param array $args
 	 * @when before_wp_load
@@ -143,10 +163,6 @@ class Lint_Command extends WP_CLI_Command {
 		if ( empty( $args ) ) {
 			$args[] = __DIR__;
 		}
-
-//		if ( empty( $args ) ) {
-//			WP_CLI::error( "No directory to lint\n\nExample:\n\n    $ wp lint path/to/directory\n" );
-//		}
 
 		if ( ! file_exists( $args[0] ) ) {
 			WP_CLI::error( sprintf( 'The file "%s" does not exist', $args[0] ) );
