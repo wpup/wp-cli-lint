@@ -68,7 +68,6 @@ class Lint_Command extends WP_CLI_Command {
 		];
 
 		$files = [
-			'.phpcs.ruleset.xml',
 			'phpcs.ruleset.xml',
 			'ruleset.xml'
 		];
