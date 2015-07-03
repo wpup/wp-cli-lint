@@ -101,7 +101,7 @@ class Lint_Command extends WP_CLI_Command {
 	 */
 
 	private function get_phpcs_bin( $root_path ) {
-		if ( $phpcs_bin = $this->get_lint_config( 'bin' ) ) {
+		if ( $phpcs_bin = $this->get_lint_config( 'phpcs' ) ) {
 			return $phpcs_bin;
 		}
 
@@ -131,14 +131,22 @@ class Lint_Command extends WP_CLI_Command {
 	/**
 	 * Invoke the lint command.
 	 *
+	 * Example:
+	 *
+	 *		$ wp lint path/to/directory
+	 *
 	 * @param array $args
 	 * @when before_wp_load
 	 */
 
 	public function __invoke( array $args = [], array $options = [] ) {
 		if ( empty( $args ) ) {
-			WP_CLI::error( "No directory to lint\n\nExample:\n\n    $ wp lint path/to/directory\n" );
+			$args[] = __DIR__;
 		}
+
+//		if ( empty( $args ) ) {
+//			WP_CLI::error( "No directory to lint\n\nExample:\n\n    $ wp lint path/to/directory\n" );
+//		}
 
 		if ( ! file_exists( $args[0] ) ) {
 			WP_CLI::error( sprintf( 'The file "%s" does not exist', $args[0] ) );
