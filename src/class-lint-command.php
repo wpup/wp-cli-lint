@@ -1,7 +1,7 @@
 <?php
 
-// Only run through WP CLI and if Lint_Command don't exists.
-if ( ! defined( 'WP_CLI' ) || class_exists( 'Lint_Command' ) ) {
+// Only run through WP CLI.
+if ( ! defined( 'WP_CLI' ) ) {
 	return;
 }
 
@@ -12,12 +12,14 @@ if ( ! defined( 'WP_CLI' ) || class_exists( 'Lint_Command' ) ) {
 class Lint_Command extends WP_CLI_Command {
 
 	/**
-	 * The default standard.
+	 * The default options for this command.
 	 *
-	 * @var string
+	 * @var array
 	 */
 
-	private $standard = 'WordPress-Core';
+	private $default_options = [
+		'standard' => 'WordPress-Core'
+	];
 
 	/**
 	 * The options for this command.
@@ -81,7 +83,7 @@ class Lint_Command extends WP_CLI_Command {
 			'ruleset.xml'
 		];
 
-		$phpcs_standard = $this->standard;
+		$phpcs_standard = $this->default_options['standard'];
 
 		foreach ( $paths as $path ) {
 			if ( empty( $path ) || ! file_exists( $path ) ) {
@@ -148,7 +150,7 @@ class Lint_Command extends WP_CLI_Command {
 			WP_CLI::error( "No directory to lint\n\nExample:\n\n    $ wp lint path/to/directory\n" );
 		}
 
-		$this->options = array_merge( $this->options, $options );
+		$this->options = array_merge( $this->default_options, $options );
 
 		if ( ! file_exists( $args[0] ) ) {
 			WP_CLI::error( sprintf( 'The file "%s" does not exist', $args[0] ) );
