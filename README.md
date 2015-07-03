@@ -16,7 +16,7 @@ For other methods, please refer to WP-CLI's [Community Packages](https://github.
 
 Running the command without any options will lint your code in the current directory with `WordPress-Core` standard.
 
-### `wp theme lint path/to/directory`
+### `wp lint path/to/directory`
 
 1. Lint the code in path/to/directory
 
