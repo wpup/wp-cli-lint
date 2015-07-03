@@ -129,7 +129,7 @@ class Lint_Command extends WP_CLI_Command {
 	}
 
 	/**
-	 * Invoke the lint command.
+	 * Lint your WordPress code using WP CLI.
 	 *
 	 * ### Config
 	 * You can add the path to the `phpcs` bin to use in WP CLI's config file and/or the standard that should be used.
@@ -154,8 +154,9 @@ class Lint_Command extends WP_CLI_Command {
 	 *     wp lint
 	 *     wp lint path/to/directory --standard=WordPress-Extra
 	 *
-	 *
 	 * @param array $args
+	 * @param array $options
+	 *
 	 * @when before_wp_load
 	 */
 

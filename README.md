@@ -1,4 +1,8 @@
+# wp-cli-lint
+
 [![Build Status](https://travis-ci.org/frozzare/wp-cli-lint.svg)](https://travis-ci.org/frozzare/wp-cli-lint)
+
+Lint your WordPress code using WP CLI.
 
 ## Installation
 
@@ -18,7 +22,7 @@ Running the command without any options will lint your code in the current direc
 
 ### `wp lint path/to/directory`
 
-1. Lint the code in path/to/directory
+1. Lint the code in `path/to/directory`
 
 ### Config
 
