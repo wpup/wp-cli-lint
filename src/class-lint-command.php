@@ -47,6 +47,7 @@ class Lint_Command extends WP_CLI_Command {
 	 * Get the PHPCS standard that should be used.
 	 *
 	 * @param string $root_path
+	 * @param array $options
 	 *
 	 * @return string
 	 */
