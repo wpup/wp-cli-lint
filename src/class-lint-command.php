@@ -152,7 +152,7 @@ class Lint_Command extends WP_CLI_Command {
 	 * ### Examples
 	 *
 	 *     wp lint
-	 *     wp lint path/to/directory --standard=WordPress-Extra
+	 *     wp lint path/to/code --standard=WordPress-Extra
 	 *
 	 * @param array $args
 	 * @param array $options

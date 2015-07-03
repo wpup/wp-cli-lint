@@ -20,9 +20,12 @@ For other methods, please refer to WP-CLI's [Community Packages](https://github.
 
 Running the command without any options will lint your code in the current directory with `WordPress-Core` standard.
 
-### `wp lint path/to/directory`
+Example:
 
-1. Lint the code in `path/to/directory`
+```
+wp lint
+wp lint path/to/code
+```
 
 ### Config
 
@@ -33,7 +36,7 @@ Example of `~/.wp-cli/config.yml`:
 ```yaml
 lint:
   phpcs: /path/to/phpcs
-  standard: `WordPress-Extra`
+  standard: WordPress-Extra
 ```
 
 ### Options
@@ -47,5 +50,5 @@ The standard to use when running `phpcs`. **Default: 'WordPress-Core'**
 ### Examples
 ```
 wp lint
-wp lint path/to/directory --standard=WordPress-Extra
+wp lint path/to/code --standard=WordPress-Extra
 ```
