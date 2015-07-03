@@ -22,16 +22,6 @@ class Lint_Command extends WP_CLI_Command {
 	];
 
 	/**
-	 * The options for this command.
-	 *
-	 * @var array
-	 */
-
-	private $options = [
-		'standard' => ''
-	];
-
-	/**
 	 * Get config value from lint config.
 	 *
 	 * @param string $key
@@ -61,13 +51,13 @@ class Lint_Command extends WP_CLI_Command {
 	 * @return string
 	 */
 
-	private function get_phpcs_standard( $root_path ) {
+	private function get_phpcs_standard( $root_path, array $options = [] ) {
 		if ( $phpcs_standard = $this->get_lint_config( 'standard' ) ) {
 			return $phpcs_standard;
 		}
 
-		if ( ! empty( $this->options['standard'] ) ) {
-			return $this->options['standard'];
+		if ( ! empty( $options['standard'] ) ) {
+			return $options['standard'];
 		}
 
 		$paths = [
@@ -150,15 +140,13 @@ class Lint_Command extends WP_CLI_Command {
 			WP_CLI::error( "No directory to lint\n\nExample:\n\n    $ wp lint path/to/directory\n" );
 		}
 
-		$this->options = array_merge( $this->default_options, $options );
-
 		if ( ! file_exists( $args[0] ) ) {
 			WP_CLI::error( sprintf( 'The file "%s" does not exist', $args[0] ) );
 		}
 
 		$root_path      = rtrim( ABSPATH, '/' );
 		$phpcs_bin      = $this->get_phpcs_bin( $root_path );
-		$phpcs_standard = $this->get_phpcs_standard( $root_path );
+		$phpcs_standard = $this->get_phpcs_standard( $root_path, $options );
 		$command_args   = '-s --extensions=php --standard=' . $phpcs_standard;
 		$command        = sprintf( '%s %s %s', $phpcs_bin, $command_args, $args[0] );
 
