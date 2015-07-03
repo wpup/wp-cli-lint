@@ -159,13 +159,8 @@ class Lint_Command extends WP_CLI_Command {
 		$root_path      = rtrim( ABSPATH, '/' );
 		$phpcs_bin      = $this->get_phpcs_bin( $root_path );
 		$phpcs_standard = $this->get_phpcs_standard( $root_path );
-
-		if ( empty( $phpcs_standard ) ) {
-			WP_CLI::error( 'Cannot find a standard to use.' );
-		}
-
-		$command_args  = '-s --extensions=php --standard=' . $phpcs_standard;
-		$command       = sprintf( '%s %s %s', $phpcs_bin, $command_args, $args[0] );
+		$command_args   = '-s --extensions=php --standard=' . $phpcs_standard;
+		$command        = sprintf( '%s %s %s', $phpcs_bin, $command_args, $args[0] );
 
 		if ( WP_CLI::get_config( 'debug' ) ) {
 			echo sprintf( "Running command: %s \n", $command );
