@@ -139,7 +139,6 @@ class Lint_Command extends WP_CLI_Command {
 	 *       phpcs: /path/to/phpcs
 	 *       standard: `WordPress-Extra`
 	 *
-	 *
 	 * ### Options
 	 *
 	 * #### `[<directory>]`
