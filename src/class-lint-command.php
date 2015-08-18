@@ -70,7 +70,8 @@ class Lint_Command extends WP_CLI_Command {
 
 		$files = [
 			'phpcs.ruleset.xml',
-			'ruleset.xml'
+			'ruleset.xml',
+			'phpcs.xml'
 		];
 
 		$phpcs_standard = $this->default_options['standard'];
