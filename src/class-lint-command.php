@@ -8,7 +8,6 @@ if ( ! defined( 'WP_CLI' ) ) {
 /**
  * Lint command for WP CLI.
  */
-
 class Lint_Command extends WP_CLI_Command {
 
 	/**
@@ -16,7 +15,6 @@ class Lint_Command extends WP_CLI_Command {
 	 *
 	 * @var array
 	 */
-
 	private $default_options = [
 		'standard' => 'WordPress-Core'
 	];
@@ -28,7 +26,6 @@ class Lint_Command extends WP_CLI_Command {
 	 *
 	 * @return mixed
 	 */
-
 	private function get_lint_config( $key ) {
 		$config = WP_CLI::get_configurator()->to_array();
 
@@ -51,7 +48,6 @@ class Lint_Command extends WP_CLI_Command {
 	 *
 	 * @return string
 	 */
-
 	private function get_phpcs_standard( $root_path, array $options = [] ) {
 		if ( $phpcs_standard = $this->get_lint_config( 'standard' ) ) {
 			return $phpcs_standard;
@@ -100,7 +96,6 @@ class Lint_Command extends WP_CLI_Command {
 	 *
 	 * @return string
 	 */
-
 	private function get_phpcs_bin( $root_path ) {
 		if ( $phpcs_bin = $this->get_lint_config( 'phpcs' ) ) {
 			return $phpcs_bin;
@@ -159,7 +154,6 @@ class Lint_Command extends WP_CLI_Command {
 	 *
 	 * @when before_wp_load
 	 */
-
 	public function __invoke( array $args = [], array $options = [] ) {
 		if ( empty( $args ) ) {
 			$args[] = getcwd();
