@@ -11,4 +11,4 @@ before_install:
   - ./phpcs/scripts/phpcs --config-set installed_paths ../wpcs
 
 script:
-  - ./phpcs/scripts/phpcs --standard=ruleset.xml --extensions=php -n -s src
+  - ./phpcs/scripts/phpcs --standard=phpcs.xml --extensions=php -n -s src
