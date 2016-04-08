@@ -6,7 +6,13 @@ Lint your WordPress code using WP CLI.
 
 ## Installation
 
-Require this file in your global config file or add it to your project.
+If you're using WP-CLI v0.23.0 or later, you can install this package with:
+
+```
+wp package install frozzare/wp-cli-lint
+```
+
+Alternatively, you can require this file in your global config file or add it to your project.
 
 Example of `~/.wp-cli/config.yml`:
 ```yaml
