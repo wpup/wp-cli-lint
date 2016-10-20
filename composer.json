@@ -1,7 +1,7 @@
 {
   "name": "frozzare/wp-cli-lint",
   "description": "WP-CLI command for linting your code",
-  "type": "command",
+  "type": "wp-cli-package",
   "keywords": ["wp-cli", "wordpress"],
   "homepage": "https://github.com/frozzare/wp-cli-lint",
   "license": "MIT",
