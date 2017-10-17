@@ -15,9 +15,10 @@ wp package install frozzare/wp-cli-lint
 Alternatively, you can require this file in your global config file or add it to your project.
 
 Example of `~/.wp-cli/config.yml`:
+
 ```yaml
 require:
-	- /path/to/wp-cli-lint/src/class-lint-command.php
+  - /path/to/wp-cli-lint/src/class-lint-command.php
 ```
 
 For other methods, please refer to WP-CLI's [Community Packages](https://github.com/wp-cli/wp-cli/wiki/Community-Packages) wiki.
@@ -54,6 +55,7 @@ The directory to lint code in. **Default: 'Current directory'**
 The standard to use when running `phpcs`. **Default: 'WordPress-Core'**
 
 ### Examples
+
 ```
 wp lint
 wp lint path/to/code --standard=WordPress-Extra
