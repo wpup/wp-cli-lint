@@ -1,6 +1,7 @@
 # wp-cli-lint
 
 [![Build Status](https://travis-ci.org/frozzare/wp-cli-lint.svg)](https://travis-ci.org/frozzare/wp-cli-lint)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Lint your WordPress code using WP CLI.
 
